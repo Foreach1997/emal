@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.xiaoluo.mapper.goodsMapperSQL">
+  <select id="getAllGoods" resultType="goods">
+   select * from goods
+  </select>
+  <update id="setGoodsAndPrice">
+   update goods set goodsName=#{goodsName},price=#{price} where id=#{id}
+  </update>
+ <!-- <insert id="setGoods">
+  insert into goods(goodsName,price,id,photo) values(#{goodsName},#{price},#{id},#{photo})
+  </insert>-->
+  <update id="setGoods">
+  update goods set goodsName=#{goodsName},price=#{price},photo=#{photo} where id=#{id}
+  </update>
+  <select id="getGoods" resultType="goods">
+   select * from goods where id=#{id}
+  </select>
+  <delete id="delGoods">
+  delete from goods where id=#{id}
+  </delete>
+  <insert id="addGoods">
+  insert into goods(goodsName,price,photo) values(#{goodsName},#{price},#{photo})
+  </insert>
+ </mapper>

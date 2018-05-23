@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.xiaoluo.mapper.orderMapperSQL">
+ <insert id="setOrder">
+ insert into goodsorder(code,goodsName,price,goodstime) values(#{code},#{goodsName},#{price},#{goodstime})
+ </insert>
+<select id="getOrder" resultType="order">
+select * from goodsorder where code=#{code}
+</select>
+<select id="getAllOrder" resultType="order">
+select * from goodsorder
+</select>
+ </mapper>
